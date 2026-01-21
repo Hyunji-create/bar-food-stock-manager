@@ -32,7 +32,7 @@ export default function Home() {
 
       <button 
         className="w-full max-w-sm h-14 bg-gray-800 text-white rounded-xl font-semibold shadow-md active:bg-gray-900"
-        onClick={() => alert('Opening Global Stock View')}
+        onClick={() => window.location.href = `/stocktake/${venue.id}`}
       >
         View All Venue Stock
       </button>
