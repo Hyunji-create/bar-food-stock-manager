@@ -1,4 +1,7 @@
+"use client"; // Required for interactivity like onClick
+
 import React from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   const venues = [
@@ -17,25 +20,27 @@ export default function Home() {
 
       <div className="grid grid-cols-1 gap-4 w-full max-w-sm">
         {venues.map((venue) => (
-          <button
-            key={venue.id}
-            className="h-20 text-xl font-bold text-white rounded-xl shadow-lg active:scale-95 transition-transform"
+          /* Use Link for internal navigation */
+          <Link 
+            key={venue.id} 
+            href={`/stocktake/${venue.id}`}
+            className="flex items-center justify-center h-20 text-xl font-bold text-white rounded-xl shadow-lg active:scale-95 transition-transform"
             style={{ backgroundColor: venue.color }}
-            onClick={() => alert(`Starting stocktake for ${venue.id}`)}
           >
             {venue.name}
-          </button>
+          </Link>
         ))}
       </div>
 
       <hr className="w-full max-w-sm my-8 border-gray-300" />
 
-      <button 
-        className="w-full max-w-sm h-14 bg-gray-800 text-white rounded-xl font-semibold shadow-md active:bg-gray-900"
-        onClick={() => window.location.href = `/stocktake/${venue.id}`}
+      {/* Changed this to a generic link since "venue.id" isn't specific here */}
+      <Link 
+        href="/stocktake/all"
+        className="flex items-center justify-center w-full max-w-sm h-14 bg-gray-800 text-white rounded-xl font-semibold shadow-md active:bg-gray-900"
       >
         View All Venue Stock
-      </button>
+      </Link>
 
       <footer className="mt-auto pt-10 text-xs text-gray-400">
         Connected to Supabase & Slack
