@@ -1,21 +1,14 @@
-import "./globals.css"; // This is the magic line that brings in Tailwind
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
-}
+import "./globals.css"; 
 
 export const metadata = {
-  title: "Bar Stock Manager",
+  title: "Bar Food Stock Manager",
+  description: "Mobile-friendly inventory tracking",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 m-0 p-0">
+      <body className="bg-gray-50 antialiased">
         {children}
       </body>
     </html>
