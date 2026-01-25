@@ -5,11 +5,11 @@ import Link from 'next/link';
 
 export default function Home() {
   const venues = [
-    { id: 'WYN', name: 'WYN Venue', color: '#3b82f6' },
-    { id: 'MCC', name: 'MCC Venue', color: '#10b981' },
-    { id: 'WSQ', name: 'WSQ Venue', color: '#f59e0b' },
-    { id: 'DSQ', name: 'DSQ Venue', color: '#ef4444' },
-  ];
+  { id: 'WYN', name: 'WYN Venue', color: 'bg-blue-500' },
+  { id: 'MCC', name: 'MCC Venue', color: 'bg-emerald-500' },
+  { id: 'WSQ', name: 'WSQ Venue', color: 'bg-amber-500' },
+  { id: 'DSQ', name: 'DSQ Venue', color: 'bg-red-500' },
+];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6 font-sans">
