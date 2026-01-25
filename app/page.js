@@ -36,11 +36,12 @@ export default function Home() {
 
       {/* Changed this to a generic link since "venue.id" isn't specific here */}
       <Link 
-        href="/stocktake/all"
-        className="flex items-center justify-center w-full max-w-sm h-14 bg-gray-800 text-white rounded-xl font-semibold shadow-md active:bg-gray-900"
-      >
-        View All Venue Stock
-      </Link>
+  key={venue.id} 
+  href={`/stocktake/${venue.id}`}
+  className={`${venue.color} flex items-center justify-center h-24 text-2xl font-black text-white rounded-2xl shadow-xl active:scale-95 transition-transform mb-4`}
+>
+  {venue.name}
+</Link>
 
       <footer className="mt-auto pt-10 text-xs text-gray-400">
         Connected to Supabase & Slack
